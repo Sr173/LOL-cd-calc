@@ -10,8 +10,8 @@ char skill_table[] = { 'Q','W','E','R','D','F' };
 
 void mem_thread() {
 	for (;;) {
-		auto end = gMrw->read<uint>(0x01AB8990);
-		for (auto i = gMrw->read<uint>(0x01AB898C); i < end; i += 4) {
+		auto end = gMrw->read<uint>(0x1AF0580);
+		for (auto i = gMrw->read<uint>(0x1AF057C); i < end; i += 4) {
 			int obj = gMrw->read<uint>(i);
 			if (gMrw->read<uint>(obj + 0x44) != 100 && gMrw->read<uint>(obj + 0x70) == 0x18) {
 				for (int i = 0; i < 6; i++) {
